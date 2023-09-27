@@ -23,7 +23,7 @@ class Score extends StatelessWidget {
                   width: 400,
                   child: Center(
                     child: Text(
-                      "Your Score is: $score",
+                      "Your Score is: $score/5",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -46,8 +46,20 @@ class Score extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 30.0),
                     ),
-                    progressColor: Colors.green,
+                    progressColor: Color.fromARGB(209, 99, 12, 115),
                   ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 95,
+                ),
+                Text(
+                  "THANK YOU!",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 ),
               ],
             )

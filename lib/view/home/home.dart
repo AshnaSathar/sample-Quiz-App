@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/score/score.dart';
+// import 'package:lottie/lottie.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key});
@@ -116,42 +117,51 @@ class _HomeState extends State<Home> {
                   },
                 ),
               ),
-              Container(
-                alignment: Alignment.bottomRight,
-                child: ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      print("selectedinde=$selectedIndex");
-                      if (selectedIndex ==
-                          Database.quizQuestions[currentQuestionIndex]
-                              ['correctAnswer']) {
-                        userscorecount++;
-                        print("user:$userscorecount");
-                        print("current=$currentQuestionIndex");
-                        currentQuestionIndex++;
-                        selectedIndex = null;
-                      } else {
-                        currentQuestionIndex++;
-                        selectedIndex = null;
-                      }
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    alignment: Alignment.bottomRight,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          print("selectedinde=$selectedIndex");
+                          if (selectedIndex ==
+                              Database.quizQuestions[currentQuestionIndex]
+                                  ['correctAnswer']) {
+                            userscorecount++;
+                            print("user:$userscorecount");
+                            print("current=$currentQuestionIndex");
+                            currentQuestionIndex++;
+                            selectedIndex = null;
+                          } else {
+                            currentQuestionIndex++;
+                            selectedIndex = null;
+                          }
 
-                      if (currentQuestionIndex > 4) {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return Score(
-                              score: userscorecount,
-                            ); // Navigate to the Score screen
-                          }),
-                        );
-                      }
-                    });
+                          if (currentQuestionIndex > 4) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return Score(
+                                  score: userscorecount,
+                                ); // Navigate to the Score screen
+                              }),
+                            );
+                          }
+                        });
 
-                    print(currentQuestionIndex);
-                  },
-                  child: Text("NEXT"),
-                ),
-              )
+                        print(currentQuestionIndex);
+                      },
+                      child: Text("NEXT"),
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromARGB(209, 99, 12, 115))),
+                    ),
+                  ),
+                  SizedBox(width: 15)
+                ],
+              ),
             ],
           ),
         ],

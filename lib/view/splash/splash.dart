@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/view/home/home.dart';
+// import 'package:flutter_application_1/view/home/home.dart';
+import 'package:flutter_application_1/view/home/home1.dart';
 // import 'package:flutter_application_1/view/home/home.dart';
 // import 'package:flutter_application_1/view/home/home1.dart';
 import 'package:lottie/lottie.dart';
@@ -12,7 +13,7 @@ class Splash extends StatelessWidget {
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Home()),
+        MaterialPageRoute(builder: (context) => Home1()),
       );
     });
     return Scaffold(
