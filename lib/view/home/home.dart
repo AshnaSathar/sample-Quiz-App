@@ -23,12 +23,7 @@ class _HomeState extends State<Home> {
       width: double.infinity,
       child: Stack(
         children: [
-          Image.network(
-            "https://www.indezine.com/powerpoint/freebackground/templates/t_ind_2515a.jpg",
-            fit: BoxFit.fill,
-            height: double.infinity,
-            width: double.infinity,
-          ),
+         
           Column(
             children: [
               Row(
